@@ -143,6 +143,13 @@ flutter:
         - asset: assets/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf
         - asset: assets/fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf
           weight: 700
+
+    - family: Mulish
+      fonts:
+        - asset: assets/fonts/Mulish/Mulish-Regular.ttf
+        - asset: assets/fonts/Mulish/Mulish-Bold.ttf
+        - asset: assets/fonts/Mulish/Mulish-Italic.ttf
+          weight: 700
 #  #       - asset: fonts/Schyler-Italic.ttf
 #  #         style: italic
 #    - family: Trajan Pro
