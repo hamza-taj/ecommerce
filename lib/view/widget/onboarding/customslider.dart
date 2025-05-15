@@ -10,10 +10,10 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-     controller: controller.pageController,
-     onPageChanged: (index) {
-       controller.onChangePage(index);
-     },
+      controller: controller.pageController,
+      onPageChanged: (index) {
+        controller.onChangePage(index);
+      },
       itemCount: onBoardingList.length,
       itemBuilder:
           (context, index) => Column(
@@ -50,7 +50,12 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                   Positioned(
                     top: 187,
                     left: index == 2 ? 140 : 20,
-                    right: index == 2 ? 25 : index==0 ? 170:200,
+                    right:
+                        index == 2
+                            ? 25
+                            : index == 0
+                            ? 170
+                            : 200,
                     child: Container(
                       height: 1.1,
                       color: index == 1 ? Colors.black : AppColor.white,
@@ -65,7 +70,6 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                       style: TextStyle(
                         color: index == 1 ? AppColor.black : AppColor.white,
                         fontSize: 13,
-
                         fontFamily: 'Mulish',
                       ),
                     ),
