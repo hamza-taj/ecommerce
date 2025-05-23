@@ -20,4 +20,11 @@ class Appimageassest {
   static const String onboardingone = "$rootImage/onbordingone.png";
   static const String onboardingtwo = "$rootImage/onbordingtwo.png";
   static const String onboardingthree = "$rootImage/onbordingthree.png";
+  
+
+  //? Auth Images
+  static const String loginimageone = "$rootImage/loginimageone.png";
+  static const String facebook = "$rootImage/facebook.png";
+  static const String google = "$rootImage/google.png";
+
 }

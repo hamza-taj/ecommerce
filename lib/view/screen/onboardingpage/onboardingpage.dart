@@ -17,7 +17,7 @@ class OnBordingPage extends StatelessWidget {
           children: [
             Expanded(child: CustomSliderOnBoarding()),
             CustomDotControllerOnBoarding(),
-            CustomButtonOnBoarding(titlebutton: 'Continue'),
+            CustomButtonOnBoarding(titlebutton: '16'.tr),
           ],
         ),
       ),
