@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/Auth/login_cotroller.dart';
+import 'package:ecommerce/controller/auth/login_cotroller.dart';
 import 'package:ecommerce/core/constants/appcolor.dart';
 import 'package:ecommerce/core/constants/appimageassest.dart';
 import 'package:ecommerce/view/widget/auth/custombuttonauth.dart';
@@ -34,8 +34,12 @@ class Login extends StatelessWidget {
             hinttitle:  "20".tr,
             iconfiled: Icons.lock,
           ),
-          CustomeTitleForgetPassword(title: "27".tr,),
-          CustomeButtonAuth(titlebutton: "21".tr),
+          CustomeTitleForgetPasswordAuth(title: "27".tr,onTap: () {
+            controller.goToForgetPassword();
+          },),
+          CustomeButtonAuth(titlebutton: "21".tr,onPressed: () {
+            controller.goToForgetPassword();
+          },),
           CustomeTitleWithSocial(title: "22".tr),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

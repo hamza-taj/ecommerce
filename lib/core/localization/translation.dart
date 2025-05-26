@@ -44,6 +44,24 @@ class TranslationsApp extends Translations {
       "31": "رقم الهاتف",
       "32": "يرجى إدخال رقم الهاتف",
       "33": "هل لديك حساب بالفعل ؟",
+      //? Forget Password
+      "34": "تحقق",
+      "35": "استعادة الوصول تبدأ بخطوة بسيطة.فقط أدخل بريدك الإلكتروني ",
+      //? Verification
+      "36": "رمز التحقق",
+      "37": "لقد أرسلنا رمز التحقق إلى بريدك الإلكتروني",
+      //? Reset Password
+      "38": "إنشاء كلمة مرور جديدة",
+      "39": "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور المستخدمة سابقًا",
+      "40": "كلمة المرور الجديدة",
+      "41": "يرجى إدخال كلمة المرور الجديدة",
+      "42": "تأكيد كلمة المرور",
+      "43": "يرجى إدخال كلمة المرور مرة أخرى",
+      "44": "تأكيد",
+      //? Success Reset Password
+      "45": "تمت العملية بنجاح",
+      "46": "تهانينا! تم إعادة تعيين كلمة المرور بنجاح",
+    
     },
 
     "en": {
@@ -80,7 +98,7 @@ class TranslationsApp extends Translations {
       "24": "Facebook",
       "25": "Don't have account?",
       "26": "Create Now",
-      "27": "Forget Password",
+      "27": "Forgot Password",
       //? Sign UP
       "28": "Sign up",
       "29": "User Name",
@@ -88,6 +106,27 @@ class TranslationsApp extends Translations {
       "31": "Phone",
       "32": "Please enter phone",
       "33": "Already have an account ?",
+      //? Forget Password
+      "34": "Check",
+      "35":
+          "Regaining access starts with a simple step Just enter your email, and we’ll assist you immediately",
+      //? Verification
+      "36": "Verification Code",
+      "37": "We have sent the verification code to your email address",
+      //? Reset Password
+      "38": "Create New Password",
+      "39": "Your new password must be different from previous used passwords",
+      "40": "New Password",
+      "41": "Please enter new password",
+      "42": "Confirm Password",
+      "43": "Please enter repeat password again",
+      "44": "Confirm",
+      //? Success Reset Password
+      "45": "Success!",
+      "46": "congratulations! Your password has been successfully reset",
+      //? Success Auth
+      "47": "Congratulations! Your account has been successfully created",
+    
     },
   };
 }

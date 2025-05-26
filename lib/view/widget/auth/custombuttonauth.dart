@@ -6,7 +6,12 @@ import 'package:get/get.dart';
 
 class CustomeButtonAuth extends GetView<OnBoardingControllerImp> {
   final String? titlebutton;
-  const CustomeButtonAuth({super.key, required this.titlebutton});
+  final void Function()? onPressed;
+  const CustomeButtonAuth({
+    super.key,
+    required this.titlebutton,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +24,16 @@ class CustomeButtonAuth extends GetView<OnBoardingControllerImp> {
           padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 10),
           backgroundColor: AppColor.babyBlue,
 
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
         ),
-        onPressed: () {
-          controller.nextPage();
-        },
+        onPressed: onPressed,
         child: Text(
           titlebutton!,
           style: TextStyle(
             color: AppColor.white,
-            fontSize:sharPerfLand == "en" ?18:14,
+            fontSize: sharPerfLand == "en" ? 16 : 14,
             fontFamily: sharPerfLand == "ar" ? "Cairo" : "Mulish",
             fontWeight: FontWeight.bold,
           ),

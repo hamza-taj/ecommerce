@@ -17,14 +17,18 @@ class Appimageassest {
 
   //? Onboarding body Images
 
-  static const String onboardingone = "$rootImage/onbordingone.png";
-  static const String onboardingtwo = "$rootImage/onbordingtwo.png";
+  static const String onboardingone   = "$rootImage/onbordingone.png";
+  static const String onboardingtwo   = "$rootImage/onbordingtwo.png";
   static const String onboardingthree = "$rootImage/onbordingthree.png";
   
 
   //? Auth Images
-  static const String loginimageone = "$rootImage/loginimageone.png";
-  static const String facebook = "$rootImage/facebook.png";
-  static const String google = "$rootImage/google.png";
+  static const String loginimageone      = "$rootImage/loginimageone.png";
+  static const String facebook           = "$rootImage/facebook.png";
+  static const String google             = "$rootImage/google.png";
+  static const String forgetpassword     = "$rootImage/forgetpassword.png";
+  static const String verfiycode         = "$rootImage/verfiycode.png";
+  static const String resetpassword      = "$rootImage/resetpassword.png";
+  static const String successreset       = "$rootImage/success.png";
 
 }

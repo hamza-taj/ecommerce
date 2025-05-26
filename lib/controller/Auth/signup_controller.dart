@@ -8,10 +8,10 @@ abstract class SignUpController extends GetxController {
 }
 
 class SignUpControllerImp extends SignUpController {
-  late TextEditingController username      = TextEditingController();
-  late TextEditingController email   = TextEditingController();
-  late TextEditingController phone   = TextEditingController();
-  late TextEditingController password   = TextEditingController();
+  late TextEditingController username = TextEditingController();
+  late TextEditingController email = TextEditingController();
+  late TextEditingController phone = TextEditingController();
+  late TextEditingController password = TextEditingController();
 
   @override
   goToLogin() {
@@ -19,22 +19,25 @@ class SignUpControllerImp extends SignUpController {
   }
 
   @override
-  signup() {}
+  signup() {
+    Get.offAllNamed(AppRoute.successsignup);
+  }
 
   @override
   void onInit() {
-    username    =  TextEditingController();
-    email       =  TextEditingController();
-    phone       =  TextEditingController();
-    password    =  TextEditingController();
+    username = TextEditingController();
+    email = TextEditingController();
+    phone = TextEditingController();
+    password = TextEditingController();
     super.onInit();
   }
+
   @override
   void dispose() {
-   username.dispose();
-   email.dispose();
-   phone.dispose();
-   password.dispose();
+    username.dispose();
+    email.dispose();
+    phone.dispose();
+    password.dispose();
     super.dispose();
   }
 }

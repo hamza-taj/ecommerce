@@ -3,7 +3,8 @@ import 'package:ecommerce/core/localization/changelocale.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/routes.dart';
-import 'package:ecommerce/view/screen/auth/login.dart';
+import 'package:ecommerce/testwidget.dart';
+
 import 'package:ecommerce/view/screen/language/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           bodyLarge: TextStyle(fontSize: 16),
         ),
       ),
-      //home: Login(),
+    //home: SimpleOTPWidget(onComplete: (String ) {  },),
       home: Language(),
       routes: routes,
     );
