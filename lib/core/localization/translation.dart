@@ -52,7 +52,8 @@ class TranslationsApp extends Translations {
       "37": "لقد أرسلنا رمز التحقق إلى بريدك الإلكتروني",
       //? Reset Password
       "38": "إنشاء كلمة مرور جديدة",
-      "39": "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور المستخدمة سابقًا",
+      "39":
+          "يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمات المرور المستخدمة سابقًا",
       "40": "كلمة المرور الجديدة",
       "41": "يرجى إدخال كلمة المرور الجديدة",
       "42": "تأكيد كلمة المرور",
@@ -61,7 +62,19 @@ class TranslationsApp extends Translations {
       //? Success Reset Password
       "45": "تمت العملية بنجاح",
       "46": "تهانينا! تم إعادة تعيين كلمة المرور بنجاح",
-    
+      //? Success Auth
+      "47": "تهانينا! تم إنشاء حسابك بنجاح",
+      //? Valid input
+      "48": "اسم المستخدم الذي أدخلته غير صالح. يرجى المحاولة مرة أخرى.",
+      "49": "البريد الإلكتروني الذي أدخلته غير صالح. يرجى المحاولة مرة أخرى.",
+      "50": "رقم الهاتف الذي أدخلته غير صالح. يرجى المحاولة مرة أخرى.",
+      "51": "هذا الحقل لا يمكن أن يكون فارغًا.",
+      "52": "يجب أن يكون عدد الأحرف أكبر من ",
+      "53": "يجب أن يكون عدد الأحرف أقل من ",
+      //? Exit Alert
+      "54": "ملاحظة",
+      "55": "هل أنت متأكد أنك تريد الخروج من التطبيق؟",
+      "56": "إلغاء",
     },
 
     "en": {
@@ -126,7 +139,17 @@ class TranslationsApp extends Translations {
       "46": "congratulations! Your password has been successfully reset",
       //? Success Auth
       "47": "Congratulations! Your account has been successfully created",
-    
+      //? Valid input
+      "48": "The username you entered is invalid. Please try again.",
+      "49": "The email you entered is invalid. Please try again.",
+      "50": "The phone you entered is invalid. Please try again.",
+      "51": "The field cannot be empty",
+      "52": "The number of characters must be greater than ",
+      "53": "The number of characters must be less than ",
+      //? Exit Alert
+      "54": "Note",
+      "55": "Are you sure you want to exit the application ?",
+      "56": "Cancel",
     },
   };
 }

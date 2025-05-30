@@ -9,8 +9,19 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-  late TextEditingController email = TextEditingController();
+  late TextEditingController email    = TextEditingController();
   late TextEditingController password = TextEditingController();
+
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
+
+  bool isshowpassword = true ;
+
+  showpassword(){
+    isshowpassword = isshowpassword == true ? false : true;
+    // Refersh UI
+    update();
+  }
 
   @override
   goToSignUp() {
@@ -18,24 +29,39 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  login() {}
+  login() {
+    if (formstate.currentState!.validate()) {
+
+      Get.offNamed(AppRoute.home);
+
+    } 
+    else {
+
+      print("not found");
+
+    }
+  }
 
   @override
   void onInit() {
-    email = TextEditingController();
+    email    = TextEditingController();
     password = TextEditingController();
     super.onInit();
   }
 
   @override
   void dispose() {
+
     email.dispose();
     password.dispose();
+
     super.dispose();
   }
 
   @override
   goToForgetPassword() {
+
     Get.toNamed(AppRoute.forgetpassword);
+    
   }
 }

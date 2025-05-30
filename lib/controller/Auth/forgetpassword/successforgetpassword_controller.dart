@@ -12,7 +12,7 @@ class SuccessForgetPasswordControllerImp extends SuccessForgetPasswordController
 
   @override
   goToLogin() {
-    Get.offNamed(AppRoute.login);
+    Get.offAllNamed(AppRoute.login);
   }
 
 

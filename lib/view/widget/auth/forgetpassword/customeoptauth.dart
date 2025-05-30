@@ -1,16 +1,14 @@
 import 'package:ecommerce/core/constants/appcolor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:ecommerce/controller/auth/forgetpassword/verfiycodeforgetpassword_controller.dart';
-import 'package:get/get.dart';
 
 class CustomeOPTAuth extends StatelessWidget {
-  const CustomeOPTAuth({super.key});
+  final Function(String)? onSubmit;
+  const CustomeOPTAuth({super.key,required this.onSubmit});
 
   @override
   Widget build(BuildContext context) {
-     VerifyCodeForgetPasswordContorllerImp controller = Get.put(
-      VerifyCodeForgetPasswordContorllerImp());
+  
     return Container(
             padding: EdgeInsets.symmetric(vertical: 40),
             child: OtpTextField(
@@ -24,10 +22,9 @@ class CustomeOPTAuth extends StatelessWidget {
 
               onCodeChanged: (String code) {},
 
-              onSubmit: (String verificationCode) {
-                controller.goToRestPassword();
-              },
+              onSubmit:onSubmit,
             ),
           );
   }
 }
+

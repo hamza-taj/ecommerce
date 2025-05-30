@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/auth/forgetpassword/verfiycodeforgetpassword_controller.dart';
+import 'package:ecommerce/controller/auth/signup/verfiycodesignup_controller.dart';
 import 'package:ecommerce/core/constants/appimageassest.dart';
 import 'package:ecommerce/view/widget/auth/forgetpassword/customedescrptionforget.dart';
 import 'package:ecommerce/view/widget/auth/forgetpassword/customeoptauth.dart';
@@ -7,15 +7,14 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-class VerifyCodeForgetPassword extends StatelessWidget {
-  const VerifyCodeForgetPassword({super.key});
+class VerifyCodeSignUp extends StatelessWidget {
+  const VerifyCodeSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeForgetPasswordContorllerImp controller = Get.put(
-      VerifyCodeForgetPasswordContorllerImp(),
+    VerifyCodeSignUpContorllerImp controller = Get.put(
+      VerifyCodeSignUpContorllerImp(),
     );
-
     return Scaffold(
       body: ListView(
         children: [
@@ -25,7 +24,7 @@ class VerifyCodeForgetPassword extends StatelessWidget {
           CustomeDiscrptionForgetPassword(title: "37".tr),
           CustomeOPTAuth(
             onSubmit: (String verificationCode) {
-              controller.goToRestPassword();
+              controller.goToSuccessSignUp();
             },
           ),
         ],

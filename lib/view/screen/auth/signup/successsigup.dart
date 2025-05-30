@@ -1,4 +1,5 @@
 
+import 'package:ecommerce/controller/auth/signup/successsignup_controller.dart';
 import 'package:ecommerce/core/constants/appimageassest.dart';
 import 'package:ecommerce/view/widget/auth/custombuttonauth.dart';
 import 'package:ecommerce/view/widget/auth/forgetpassword/customdescrptionsuccess.dart';
@@ -12,6 +13,8 @@ class SuccessSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SuccessSignUpControllerImp controller =
+        Get.put(SuccessSignUpControllerImp());
 
     return Scaffold(
       body: ListView(
@@ -25,7 +28,7 @@ class SuccessSignUp extends StatelessWidget {
           CustomeButtonAuth(
             titlebutton: "16".tr,
             onPressed: () {
-             
+             controller.goToLogin();
             },
           ),
         ],

@@ -1,9 +1,9 @@
-import 'package:ecommerce/core/constants/appcolor.dart';
+import 'package:ecommerce/binding.dart';
 import 'package:ecommerce/core/localization/changelocale.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/routes.dart';
-import 'package:ecommerce/testwidget.dart';
+//import 'package:ecommerce/testwidget.dart';
 
 import 'package:ecommerce/view/screen/language/language.dart';
 import 'package:flutter/material.dart';
@@ -22,19 +22,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ChangeLocale controllerLang = Get.put(ChangeLocale());
     return GetMaterialApp(
-      locale: controllerLang.language,    //! Locale Language
-      translations: TranslationsApp(),    //! Translations
+      locale: controllerLang.language,            //! Locale Language
+      translations: TranslationsApp(),            //! Translations
+      initialBinding: MyBinding(),                //! Binding
       debugShowCheckedModeBanner: false,
       title: 'Flutter App',
-      theme: ThemeData(
-        fontFamily: 'PlayfairDisplay',
-        primaryColor: AppColor.azureBlue,
-        textTheme: TextTheme(
-          headlineLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          bodyLarge: TextStyle(fontSize: 16),
-        ),
-      ),
-    //home: SimpleOTPWidget(onComplete: (String ) {  },),
+      theme: controllerLang.apptheme, //! Theme
+
       home: Language(),
       routes: routes,
     );

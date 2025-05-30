@@ -7,14 +7,27 @@ abstract class ResetPasswordContorller extends GetxController {
   goToSuccessPassword();
 }
 
-class ResetPasswordContorllerImp
-    extends ResetPasswordContorller {
+class ResetPasswordContorllerImp extends ResetPasswordContorller {
   late TextEditingController password = TextEditingController();
   late TextEditingController repassword = TextEditingController();
 
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
+  bool isshowpassword = true;
+
+  showpassword() {
+    isshowpassword = isshowpassword == true ? false : true;
+    update();
+  }
+
   @override
   goToSuccessPassword() {
-    Get.offNamed(AppRoute.successresetpassword);
+    if (formstate.currentState!.validate()) {
+      Get.offNamed(AppRoute.successresetpassword);
+    } else {
+      // ignore: avoid_print
+      print("not found");
+    }
   }
 
   @override
