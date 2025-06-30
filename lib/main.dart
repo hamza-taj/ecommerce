@@ -3,9 +3,6 @@ import 'package:ecommerce/core/localization/changelocale.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/routes.dart';
-//import 'package:ecommerce/testwidget.dart';
-
-import 'package:ecommerce/view/screen/language/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,11 +23,9 @@ class MyApp extends StatelessWidget {
       translations: TranslationsApp(),            //! Translations
       initialBinding: MyBinding(),                //! Binding
       debugShowCheckedModeBanner: false,
-      title: 'Flutter App',
-      theme: controllerLang.apptheme, //! Theme
-
-      home: Language(),
-      routes: routes,
+      title: 'Ecommerce App',
+      theme: controllerLang.apptheme,             //! Theme
+      getPages:getPages,                         //! Routing GetX             
     );
   }
 }

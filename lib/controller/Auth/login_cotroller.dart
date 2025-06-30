@@ -51,10 +51,8 @@ class LoginControllerImp extends LoginController {
 
   @override
   void dispose() {
-
     email.dispose();
     password.dispose();
-
     super.dispose();
   }
 

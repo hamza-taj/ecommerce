@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/auth/forgetpassword/forgetpassword_controller.dart';
 import 'package:ecommerce/controller/auth/forgetpassword/resetpassword_controller.dart';
 import 'package:ecommerce/controller/auth/signup/signup_controller.dart';
+import 'package:ecommerce/core/classes/crud.dart';
 import 'package:get/get.dart';
 
 class MyBinding extends Bindings{
@@ -12,6 +13,8 @@ class MyBinding extends Bindings{
   Get.lazyPut(() => ForgetPasswordControllerImp(), fenix: true);               //! Forget Password
   
   Get.lazyPut(() => ResetPasswordContorllerImp(),fenix: true);                 //! Reset Password
+
+  Get.put(Crud());                                                             //! Crud 
   }
 
 }

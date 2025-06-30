@@ -1,5 +1,4 @@
 import 'package:ecommerce/core/constants/routesname.dart';
-
 import 'package:get/get.dart';
 
 abstract class VerifyCodeSignUpContorller extends GetxController {
@@ -18,8 +17,8 @@ class VerifyCodeSignUpContorllerImp extends VerifyCodeSignUpContorller {
   @override
   checkcode() {}
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  // @override
+  // void onInit() {
+  //   super.onInit();
+  // }
 }
