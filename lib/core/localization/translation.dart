@@ -75,6 +75,15 @@ class TranslationsApp extends Translations {
       "54": "ملاحظة",
       "55": "هل أنت متأكد أنك تريد الخروج من التطبيق؟",
       "56": "إلغاء",
+      //? Notification Card
+      "57": "تحذير",
+      "58": "البريد الإلكتروني أو رقم الهاتف موجود مسبقًا. يرجى استخدام بيانات مختلفة.",
+      "59": "رمز التحقق غير صالح. يرجى المحاولة مرة أخرى.",
+      "60": "البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى.",
+      "61": "لا يوجد حساب مرتبط بهذا البريد الإلكتروني. يرجى المحاولة مرة أخرى.",
+      "62": "كلمات المرور غير متطابقة. يرجى المحاولة مرة أخرى.",
+      "63": "يرجى المحاولة مرة أخرى.",
+
     },
 
     "en": {
@@ -150,6 +159,15 @@ class TranslationsApp extends Translations {
       "54": "Note",
       "55": "Are you sure you want to exit the application ?",
       "56": "Cancel",
+      //? Notification Card 
+      "57": "Warning",
+      "58": "Email or phone number already exists Please use different credentials",
+      "59": "Invalid verification code , Please try again",
+      "60": "Invalid email or password , Please try again",
+      "61": "No account found with this email address , Please try again",
+      "62": "Passwords do not match  , Please try again",
+      "63": "please try again",
+
     },
   };
 }

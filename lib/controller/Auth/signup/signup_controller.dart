@@ -1,5 +1,10 @@
+import 'package:ecommerce/core/classes/statesrequest.dart';
+import 'package:ecommerce/core/constants/notification_card.dart';
 import 'package:ecommerce/core/constants/routesname.dart';
+import 'package:ecommerce/core/functions/handlingdata.dart';
+import 'package:ecommerce/data/datasources/remote/auth/signup_data.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
@@ -8,46 +13,73 @@ abstract class SignUpController extends GetxController {
 }
 
 class SignUpControllerImp extends SignUpController {
+ 
+  //? Controller TextFormField
+
   late TextEditingController username = TextEditingController();
   late TextEditingController email = TextEditingController();
   late TextEditingController phone = TextEditingController();
   late TextEditingController password = TextEditingController();
+
+  //!  Back End  and Data
+
+  SignupData signupData  = SignupData(Get.find());
+   List data = [] ;                           
+   StatusRequest statusRequest = StatusRequest.none;            
   
+  //? Globa Key
 
-    GlobalKey <FormState> formstate = GlobalKey<FormState>();
+  GlobalKey <FormState> formstate = GlobalKey<FormState>();
 
-    bool isshowpassword = true;
+  //? Show Password
 
-    showpassword(){
-      isshowpassword = isshowpassword == true ? false : true ;
-      update();
+  bool isshowpassword = true;
+  showpassword(){
+    isshowpassword = isshowpassword == true ? false : true ;
+    update();
     }
   
+  //? Go To Login
 
   @override
   goToLogin() {
     Get.offAllNamed(AppRoute.login);
-    
-  
   }
 
+
+   //? Go To VerfiyCode 
   @override
-  signup() {
-     if (formstate.currentState!.validate()) {
-  Get.offAllNamed(AppRoute.verfiycodsignup);
-    } else{
-      // ignore: avoid_print
-      print("not found");
-    }
+  signup() async {
+
+  if (formstate.currentState!.validate()) {
+
+  statusRequest  = StatusRequest.loading ;
+  update();      
+  var response   = await signupData.postData( username.text , email.text , password.text , phone.text );
+  statusRequest  = handlingData(response);  
+  if ( StatusRequest.success == statusRequest ) {
+   if( response ['status'] ==  "success" )  {
+     Get.offAllNamed(AppRoute.verfiycodsignup , arguments: {"email": email.text} );           
+   }
+
+   else {
+    showNotificationCard("57".tr, "58".tr);
+    statusRequest = StatusRequest.failure;
+   }
+
+  }
+  update();
+
+    } 
   
   }
 
   @override
   void onInit() {
-    username = TextEditingController();
-    email = TextEditingController();
-    phone = TextEditingController();
-    password = TextEditingController();
+    username   = TextEditingController();
+    email      = TextEditingController();
+    phone      = TextEditingController();
+    password   = TextEditingController();
     super.onInit();
   }
 

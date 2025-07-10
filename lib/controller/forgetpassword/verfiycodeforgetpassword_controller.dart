@@ -2,41 +2,50 @@ import 'package:ecommerce/core/classes/statesrequest.dart';
 import 'package:ecommerce/core/constants/notification_card.dart';
 import 'package:ecommerce/core/constants/routesname.dart';
 import 'package:ecommerce/core/functions/handlingdata.dart';
-import 'package:ecommerce/data/datasources/remote/auth/verfiycodesignup_data.dart';
+import 'package:ecommerce/data/datasources/remote/forgetpassword/verfiycode_data.dart';
+
 import 'package:get/get.dart';
 
-abstract class VerifyCodeSignUpContorller extends GetxController {
+abstract class VerifyCodeForgetPasswordContorller extends GetxController {
   
-  goToSuccessSignUp(String verfiycodesignup);
+  checkcode( String verifycode );
+
 }
 
-class VerifyCodeSignUpContorllerImp extends VerifyCodeSignUpContorller {
+class VerifyCodeForgetPasswordContorllerImp extends VerifyCodeForgetPasswordContorller {
+
 
   //! Backend and Data
-  VerifyCodeSignupData verifyCodeSignupData = VerifyCodeSignupData(Get.find());
+
+  VerifyCodeData verifyCodeData = VerifyCodeData(Get.find());
   StatusRequest statusRequest = StatusRequest.none; 
   String? email;
 
+  
+
   @override
-  goToSuccessSignUp(verifycodesignup) async {
+  checkcode(verifycode) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await verifyCodeSignupData.postData(
+    var response = await verifyCodeData.postData(
       email!,
-      verifycodesignup,
+      verifycode,
     );
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-        Get.offNamed(AppRoute.successsignup);
-      } else {
+
+         Get.offNamed( AppRoute.resetpassword , arguments: {"email": email} );
+
+      } 
+
+      else {
         showNotificationCard("57".tr, "59".tr);
         statusRequest = StatusRequest.failure;
       }
     }
     update();
   }
-
 
   @override
   void onInit() {

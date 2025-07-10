@@ -2,9 +2,9 @@
 import 'package:ecommerce/controller/auth/signup/successsignup_controller.dart';
 import 'package:ecommerce/core/constants/appimageassest.dart';
 import 'package:ecommerce/view/widget/auth/custombuttonauth.dart';
-import 'package:ecommerce/view/widget/auth/forgetpassword/customdescrptionsuccess.dart';
+import 'package:ecommerce/view/widget/forgetpassword/customdescrptionsuccess.dart';
 
-import 'package:ecommerce/view/widget/auth/forgetpassword/custometitleforget.dart';
+import 'package:ecommerce/view/widget/forgetpassword/custometitleforget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

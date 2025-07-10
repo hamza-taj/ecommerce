@@ -1,5 +1,6 @@
 class Appimageassest {
-  static const rootImage = "assets/images";
+  static const rootImage    = "assets/images";   //! images
+  static const rootlottie   = "assets/lottie";   //! lottie
 
   //! Onboarding Images
   //? Onboarding Top Images
@@ -30,5 +31,12 @@ class Appimageassest {
   static const String verfiycode         = "$rootImage/verfiycode.png";
   static const String resetpassword      = "$rootImage/resetpassword.png";
   static const String successreset       = "$rootImage/success.png";
+
+  //! <---------------------------------------Lottie------------------------------------------------------->
+
+  static const String loading            = "$rootlottie/loading.json";
+  static const String offline            = "$rootlottie/offline.json";
+  static const String server             = "$rootlottie/serverfaliure.json";
+  static const String nodata             = "$rootlottie/nodata.json";
 
 }

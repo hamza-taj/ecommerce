@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class Crud {
 
-Future<Either<StatesRequest , Map >> postData( String linkurl , Map data ) async {
+Future<Either<StatusRequest , Map >> postData( String linkurl , Map data ) async {
 
 try{
 
@@ -27,7 +27,7 @@ return Right (responsebody);
 
 else { 
   
-  return left(StatesRequest.serverFailure);
+  return left(StatusRequest.serverFailure);
 
 }
 
@@ -36,14 +36,14 @@ else {
 
 else {
 
-  return left ( StatesRequest.offlineFailure ) ;
+  return left ( StatusRequest.offlineFailure ) ;
 
 }
 }
 
 catch(_){
   
-  return left(StatesRequest.failure);
+  return left(StatusRequest.serverExcption);
 
 }
 }

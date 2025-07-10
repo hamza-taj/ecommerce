@@ -14,7 +14,7 @@ getData() async {
 
 var  response = await crud.postData ( APILinks.testapi , { } );
 
-response.fold( (l) => l , (r) => r ) ;
+return response.fold( (l) => l , (r) => r ) ;
 
 
 
