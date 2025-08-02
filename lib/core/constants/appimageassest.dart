@@ -38,5 +38,7 @@ class Appimageassest {
   static const String offline            = "$rootlottie/offline.json";
   static const String server             = "$rootlottie/serverfaliure.json";
   static const String nodata             = "$rootlottie/nodata.json";
+  static const String newnodata          = "$rootlottie/nodata.json";
+  static const String newloading         = "$rootlottie/newloading.json";
 
 }

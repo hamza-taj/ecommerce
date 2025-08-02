@@ -1,6 +1,5 @@
 import 'package:ecommerce/core/constants/routesname.dart';
 import 'package:ecommerce/core/middleware/mymiddleware.dart';
-//import 'package:ecommerce/test.dart';
 import 'package:ecommerce/view/screen/forgetpasswordfile/forgetpassword.dart';
 import 'package:ecommerce/view/screen/forgetpasswordfile/resetpassword.dart';
 import 'package:ecommerce/view/screen/forgetpasswordfile/successresetpassword.dart';
@@ -9,10 +8,10 @@ import 'package:ecommerce/view/screen/auth/login.dart';
 import 'package:ecommerce/view/screen/auth/signup/signup.dart';
 import 'package:ecommerce/view/screen/auth/signup/successsigup.dart';
 import 'package:ecommerce/view/screen/auth/signup/verifycodesignup.dart';
-import 'package:ecommerce/view/screen/home.dart';
+import 'package:ecommerce/view/screen/homescreen.dart';
+import 'package:ecommerce/view/screen/itmes/items.dart';
 import 'package:ecommerce/view/screen/language/language.dart';
 import 'package:ecommerce/view/screen/onboardingpage/onboardingpage.dart';
-
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? getPages = [
@@ -41,5 +40,8 @@ List<GetPage<dynamic>>? getPages = [
   ),
 
   //? Home Page:
-  GetPage(name: AppRoute.home                        , page: () =>     Home()),
+  GetPage(name: AppRoute.home                        , page: () =>     HomeScreen()),
+
+  //? Items
+  GetPage(name: AppRoute.items                        , page: () =>     ItemsPage()),
 ];

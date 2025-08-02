@@ -2,7 +2,7 @@ import 'package:ecommerce/core/constants/appcolor.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+
 
 class CustomeFormFiledAuth extends StatelessWidget {
   final String title;

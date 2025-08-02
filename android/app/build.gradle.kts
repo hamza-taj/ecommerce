@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -39,6 +40,7 @@ android {
     }
 }
 dependencies {
+      
 //    implementation("androidx.core:core-ktx:1.16.0")
 //    implementation("androidx.appcompat:appcompat:1.6.1")
 }

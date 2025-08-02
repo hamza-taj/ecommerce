@@ -1,4 +1,5 @@
 import 'package:ecommerce/core/classes/statesrequest.dart';
+
 import 'package:ecommerce/core/constants/appimageassest.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -12,13 +13,13 @@ class HandlingDataView extends StatelessWidget {
   Widget build(BuildContext context) {
     return
     //? Loading      
-    statusRequest == StatusRequest.loading ?           Center( child: Lottie.asset(Appimageassest.loading , width: 250 , height: 250 ,) )  : 
+    statusRequest == StatusRequest.loading ?           Center( child: Lottie.asset(Appimageassest.newloading , width: 300 , height: 300 ,alignment:Alignment.center , ) )  : 
     //! OFFLINE Failure
     statusRequest == StatusRequest.offlineFailure ?    Center( child: Lottie.asset(Appimageassest.offline  , repeat: false) ) :
     //! SERVER Failure
     statusRequest == StatusRequest.serverFailure ?     Center( child: Lottie.asset(Appimageassest.server , width: 250 , height: 250) ):
     //! FAILURE 
-    statusRequest == StatusRequest.failure ?           Center( child: Lottie.asset(Appimageassest.nodata , width: 250 , height: 250) ) : 
+    statusRequest == StatusRequest.failure ?          Center( child: Lottie.asset(Appimageassest.newnodata , width: 250 , height: 250) ) : 
 
     widget ;
 

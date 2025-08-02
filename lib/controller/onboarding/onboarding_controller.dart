@@ -24,7 +24,7 @@ class OnBoardingControllerImp extends OnBoardingController {
   nextPage() {
     currentPage++;
     if (currentPage > onBoardingList.length - 1) {
-      myServiceApp.sharedPreferences.setString("onboarding", "1");    //! for Middle Ware and Storg Vlaue in SharPerferences
+      myServiceApp.sharedPreferences.setString("step", "1");    //! for Middle Ware and Storg Vlaue in SharPerferences
       Get.offAllNamed(AppRoute.login);
     
     } else {

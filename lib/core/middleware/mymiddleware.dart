@@ -13,7 +13,11 @@ class MyMiddleWare extends GetMiddleware {
   @override
   RouteSettings? redirect(String? route) {
 
-    if (myServiceApp.sharedPreferences.getString("onboarding")  ==  "1" ) {
+
+    if (myServiceApp.sharedPreferences.getString("step") == "2") {
+      return RouteSettings(name: AppRoute.home);
+    }
+    if (myServiceApp.sharedPreferences.getString("step")  ==  "1" ) {
       return RouteSettings(name: AppRoute.login);
     }
     return null;
