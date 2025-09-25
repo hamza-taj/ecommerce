@@ -39,7 +39,7 @@ class HandlingDataRequsest extends StatelessWidget {
   Widget build(BuildContext context) {
     return
     //? Loading      
-    statusRequest == StatusRequest.loading ?           Center( child: Lottie.asset(Appimageassest.loading , width: 250 , height: 250 ,) )  : 
+    statusRequest == StatusRequest.loading ?           Center( child: Lottie.asset(Appimageassest.newloading , width: 300 , height: 300 ,) )  : 
     //! OFFLINE Failure
     statusRequest == StatusRequest.offlineFailure ?    Center( child: Lottie.asset(Appimageassest.offline  ) ) :
     //! SERVER Failure

@@ -9,8 +9,10 @@ import 'package:ecommerce/view/screen/auth/signup/signup.dart';
 import 'package:ecommerce/view/screen/auth/signup/successsigup.dart';
 import 'package:ecommerce/view/screen/auth/signup/verifycodesignup.dart';
 import 'package:ecommerce/view/screen/homescreen.dart';
+import 'package:ecommerce/view/screen/itemsdetails/itemsdetails.dart';
 import 'package:ecommerce/view/screen/itmes/items.dart';
 import 'package:ecommerce/view/screen/language/language.dart';
+import 'package:ecommerce/view/screen/myfavorite/myfavorite.dart';
 import 'package:ecommerce/view/screen/onboardingpage/onboardingpage.dart';
 import 'package:get/get.dart';
 
@@ -18,12 +20,12 @@ List<GetPage<dynamic>>? getPages = [
   //? Start App:
   GetPage(name: "/"                                  , page: () =>     Language(), 
   
-   middlewares: [MyMiddleWare()]
+     middlewares: [MyMiddleWare()]
   
   ),
 
  //? Test 
- // GetPage(name: "/"                                  , page: () =>     TestView()),
+  // GetPage(name: "/"                                  , page: () =>     ItemsDetails()),
 
   //? OnBoarding Page:
   GetPage(name: AppRoute.onboarding                  , page: () =>     OnBordingPage()),
@@ -43,5 +45,9 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoute.home                        , page: () =>     HomeScreen()),
 
   //? Items
-  GetPage(name: AppRoute.items                        , page: () =>     ItemsPage()),
+  GetPage(name: AppRoute.items                       , page: () =>     ItemsPage()),
+  //? ItemsDetails
+  GetPage(name: AppRoute.itemsdetails                , page: () =>     ItemsDetails()),
+  //? My Favorite
+  GetPage(name: AppRoute.myfavorite                  , page: () =>     MyFavorite()),
 ];

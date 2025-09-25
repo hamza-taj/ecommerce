@@ -1,12 +1,17 @@
 import 'package:ecommerce/core/classes/statesrequest.dart';
+import 'package:ecommerce/core/constants/routesname.dart';
 import 'package:ecommerce/core/functions/handlingdata.dart';
+import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/data/datasources/remote/items/items_data.dart';
+import 'package:ecommerce/data/model/items/itemsmodel.dart';
 import 'package:get/get.dart';
 
 abstract class ItmesController extends GetxController {
   intialData();
   changecat(int indexcat , String catval);
   getItems( String categoriesid);
+  goToItemsDetails(ItemsModel itemsmodel);
+  goToFavorite();
 }
 
 class ItemsControllerImp extends ItmesController {
@@ -17,6 +22,7 @@ class ItemsControllerImp extends ItmesController {
   ItemsData itemsdata = ItemsData(Get.find());
   StatusRequest? statusRequest ;
   List data = [];
+  MyServiceApp myService = Get.find();
 
   @override
   void onInit() {
@@ -45,22 +51,30 @@ getItems(categoriesid) async {
   data.clear();
   statusRequest = StatusRequest.loading; //? Loading
   update();
-
-  var response = await itemsdata.getData(categoriesid);
+  var response = await itemsdata.getData(categoriesid , myService.sharedPreferences.getString("id")!);
   statusRequest = handlingData(response);
-
   if (statusRequest == StatusRequest.success) {
     if (response['status'] == "success") {
     
         data.addAll(response['data']); //? Add All Data in List data
       
     } else {
-      statusRequest = StatusRequest.failure; // أو حالة مناسبة
+      statusRequest = StatusRequest.failure;    
     }
   }
 
   update();
 }
+
+  @override
+  goToItemsDetails(itemsmodel) {
+  Get.toNamed(AppRoute.itemsdetails   , arguments: { "itemsmodel": itemsmodel }  );
+  }
+  
+  @override
+  goToFavorite() {
+    Get.toNamed(AppRoute.myfavorite);
+  }
 
 
 }

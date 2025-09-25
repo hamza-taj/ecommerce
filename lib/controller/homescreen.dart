@@ -24,18 +24,18 @@ class HomeScreenControllerImp extends HomeScreenController {
     ),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [Center(child: Text("Profile"))],
+      children: [Center(child: Text("Notifications"))],
     ),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [Center(child: Text("Favorites"))],
+      children: [Center(child: Text("Profile"))],
     ),
   ];
 
   List<Map<String , dynamic>> listnavigator = [
-    { "name" : "Home"        , "icon":Icons.home_outlined},
-    { "name" : "Setting"     , "icon":Icons.settings_outlined},
-    { "name" : "Favorite"    , "icon":Icons.favorite_outline},
-    { "name" : "Profile"     , "icon":Icons.person_outline},
+    { "name" : "Home"          , "icon":Icons.home_outlined},
+    { "name" : "Setting"       , "icon":Icons.settings_outlined},
+    { "name" : "Alert"         , "icon":Icons.notifications_active_outlined},
+    { "name" : "Profile"       , "icon":Icons.person_outline},
   ];
 }

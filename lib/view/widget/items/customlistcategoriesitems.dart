@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/items/itmes_controller.dart';
 import 'package:ecommerce/core/constants/appcolor.dart';
+import 'package:ecommerce/core/functions/translatedatabase.dart';
 import 'package:ecommerce/data/model/categories/categoriesmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,10 +60,10 @@ class Categories extends StatelessWidget {
                     : null,
             padding: EdgeInsets.only(top: 20, left: 11, right: 11, bottom: 8),
             child: Text(
-              "${categoriesModel.categoriesNameEn}",
+             translatedatebase("${categoriesModel.categoriesNameEn}" ,"${categoriesModel.categoriesNameAr}"),
               style: TextStyle(
                 color: AppColor.darkBlue,
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),
             ),

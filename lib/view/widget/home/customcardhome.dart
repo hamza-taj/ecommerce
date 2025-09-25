@@ -1,67 +1,69 @@
+import 'package:ecommerce/controller/home/home_controller.dart';
 import 'package:ecommerce/core/constants/appcolor.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CustomCardHome extends StatelessWidget {
+class CustomCardHome extends GetView<HomeControllerImp> {
   final String titlecard;
   final String subtitlecard;
-  const CustomCardHome({super.key, required this.titlecard, required this.subtitlecard});
+  const CustomCardHome({
+    super.key,
+    required this.titlecard,
+    required this.subtitlecard,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-                      height: 180,
-                      margin: EdgeInsets.symmetric(vertical: 20),
-                      decoration: BoxDecoration(
-                        color: AppColor.primaryColor,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Stack(
-                        children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            child: ListTile(
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 25,
-                              ),
-                              title: Container(
-                                padding: EdgeInsets.only(top: 5),
-                                child: Text(
-                                  titlecard,
-                                  style: TextStyle(
-                                    color: AppColor.white,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
-                              subtitle: Container(
-                                padding: EdgeInsets.only(top: 10),
-                                child: Text(
-                                  subtitlecard,
-                                  style: TextStyle(
-                                    color: AppColor.darkBlue,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "PlayfairDisplay",
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+      height: 180,
+      margin: EdgeInsets.symmetric(vertical: 20),
+      decoration: BoxDecoration(
+        color: AppColor.primaryColor,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Stack(
+        children: [
+          Container(
+            alignment: Alignment.centerLeft,
+            child: ListTile(
+              contentPadding: EdgeInsets.symmetric(horizontal: 25),
+              title: Container(
+                padding: EdgeInsets.only(top: 5),
+                child: Text(
+                  titlecard,
+                  style: TextStyle(color: AppColor.white, fontSize: 16),
+                ),
+              ),
+              subtitle: Container(
+                padding: EdgeInsets.only(top: 10),
+                child: Text(
+                  subtitlecard,
+                  style: TextStyle(
+                    color: AppColor.darkBlue,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "PlayfairDisplay",
+                  ),
+                ),
+              ),
+            ),
+          ),
 
-                          Positioned(
-                            top: -20,
-                            right: -15,
-                            child: Container(
-                              width: 160,
-                              height: 160,
-                              decoration: BoxDecoration(
-                                color: AppColor.secondaryColor,
-                                borderRadius: BorderRadius.circular(120),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
+          Positioned(
+            top: -20,
+            right: controller.lang == "en" ? -15 : null,
+            left: controller.lang == "ar" ? -15 : null,
+            child: Container(
+              width: 160,
+              height: 160,
+              decoration: BoxDecoration(
+                color: AppColor.secondaryColor,
+                borderRadius: BorderRadius.circular(120),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

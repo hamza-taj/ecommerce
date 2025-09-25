@@ -1,33 +1,16 @@
 import 'package:ecommerce/apilinks/api_links.dart';
 import 'package:ecommerce/core/classes/crud.dart';
 
-class TestData { 
+class TestData {
+  Crud crud;
 
-Crud crud ;
+  TestData(this.crud);
 
-TestData(this.crud);
+  //? Get All Data
 
+  getData() async {
+    var response = await crud.postData(APILinks.testapi, {});
 
-//? Get All Data
-
-getData() async {
-
-var  response = await crud.postData ( APILinks.testapi , { } );
-
-return response.fold( (l) => l , (r) => r ) ;
-
-
-
-
+    return response.fold((l) => l, (r) => r);
+  }
 }
-
-
-
-
-
-
-
-
-
-}
-

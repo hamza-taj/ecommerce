@@ -2,7 +2,7 @@ class APILinks {
   
 //! Server Link 
 
-static const String ip                         = "192.168.1.8";
+static const String ip                         = "192.168.1.4";
 static const String server                     = "http://$ip/ecommerceapp" ;
 
 //! Image Link 
@@ -33,6 +33,11 @@ static const String home                        = "$server/home.php";
 //! Items 
 
 static const String items                       = "$server/itmes/items.php";
+
+//! Favorite 
+static const String addfavoritelink             = "$server/favorite/add.php";
+static const String removefavoritelink          = "$server/favorite/remove.php";
+static const String viewfavoritelink            = "$server/favorite/view.php";
 
 
 

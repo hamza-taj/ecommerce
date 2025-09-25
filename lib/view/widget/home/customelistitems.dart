@@ -1,6 +1,7 @@
 import 'package:ecommerce/apilinks/api_links.dart';
 import 'package:ecommerce/controller/home/home_controller.dart';
 import 'package:ecommerce/core/constants/appcolor.dart';
+import 'package:ecommerce/core/functions/translatedatabase.dart';
 import 'package:ecommerce/data/model/items/itemsmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,17 +17,18 @@ class CustomListItems extends GetView<HomeControllerImp> {
         scrollDirection: Axis.horizontal,
         itemCount: controller.items.length,
         itemBuilder: (context, index) {
-          return Items(itemsModel: ItemsModel.fromJson( controller.items[index]),);
+          return Items(
+            itemsModel: ItemsModel.fromJson(controller.items[index]),
+          );
         },
       ),
     );
   }
 }
 
-
 //! Items Section
 
-class Items extends StatelessWidget {
+class Items extends GetView<HomeControllerImp> {
   final ItemsModel itemsModel;
   const Items({super.key, required this.itemsModel});
 
@@ -35,9 +37,12 @@ class Items extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          margin: EdgeInsets.symmetric(vertical: 10),
+          padding:
+              controller.lang == "en"
+                  ? EdgeInsets.symmetric(horizontal: 30, vertical: 20)
+                  : EdgeInsets.symmetric(horizontal: 40, vertical: 20),
 
+          //margin: EdgeInsets.symmetric(vertical: 10),
           child: Image.network(
             "${APILinks.imageitems}/${itemsModel.itemsImage}",
             width: 150,
@@ -58,14 +63,18 @@ class Items extends StatelessWidget {
         ),
         Positioned(
           top: 120,
-          left: 15,
+          left: controller.lang == "en" ? 15 : null,
+          right: controller.lang == "ar" ? 35 : null,
           child: Text(
-            "${itemsModel.itemsNameEn}",
+            translatedatebase(
+              "${itemsModel.itemsNameEn}",
+              "${itemsModel.itemsNameAr}",
+            ),
             style: TextStyle(
-              color: AppColor.blueGray,
-              fontSize: 15,
+              color: AppColor.darkBlue,
+              fontSize: controller.lang == "en" ? 12 : 10,
               fontWeight: FontWeight.bold,
-              //fontFamily: "PlayfairDisplay",
+              // fontFamily: "Cairo",
             ),
           ),
         ),

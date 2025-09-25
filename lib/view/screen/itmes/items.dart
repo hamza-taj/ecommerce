@@ -1,4 +1,4 @@
-
+import 'package:ecommerce/controller/favaorite/favorite_controller.dart';
 import 'package:ecommerce/controller/items/itmes_controller.dart';
 import 'package:ecommerce/core/classes/handlingdataview.dart';
 import 'package:ecommerce/core/constants/appcolor.dart';
@@ -14,7 +14,8 @@ class ItemsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     Get.put(ItemsControllerImp());
+    ItemsControllerImp controllerItems =  Get.put(ItemsControllerImp());
+    FavoriteController controllerFav = Get.put(FavoriteController());
     return Scaffold(
       backgroundColor: AppColor.white,
       body: Container(
@@ -22,8 +23,11 @@ class ItemsPage extends StatelessWidget {
         child: ListView(
           children: [
             CustomAppBar(
-              titleappbar: "Find Product",
-              iconappbar: Icons.notifications_active_outlined,
+              titleappbar: "64".tr,
+              iconappbar: Icons.favorite_outline,
+              onPressedFavorite: (){
+                controllerItems.goToFavorite();
+              },
             ),
             CustomListCategoriesItems(),
             SizedBox(height: 10),
@@ -38,10 +42,15 @@ class ItemsPage extends StatelessWidget {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
                         childAspectRatio: 0.69,
                       ),
                       itemBuilder: (context, index) {
+                        controllerFav.isfavorite[controller
+                                .data[index]['items_id']] =
+                            controller.data[index]['favorite'];
                         return CustomCardListItems(
+                          active: false,
                           itemsmodel: ItemsModel.fromJson(
                             controller.data[index],
                           ),

@@ -23,16 +23,19 @@ class Home extends StatelessWidget {
                 child: ListView(
                   children: [
                     CustomAppBar(
-                      titleappbar: "Find Product",
-                      iconappbar: Icons.notifications_active_outlined,
+                      titleappbar: "64".tr,
+                      iconappbar: Icons.favorite_outline,
+                      onPressedFavorite: (){
+                        controller.goToMyFavorite();
+                      },
                     ),
                     CustomCardHome(
                       titlecard: "A Summer Sale",
                       subtitlecard: "CheckBack 50%",
                     ),
-                    CustomTitleHome(title: "Categories"),
+                    CustomTitleHome(title:"65".tr),
                     CustomListCategories(),
-                    CustomTitleHome(title: "Products For You"),
+                    CustomTitleHome(title: "66".tr),
                     CustomListItems(),
                   ],
                 ),

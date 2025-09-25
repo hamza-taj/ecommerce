@@ -1,11 +1,10 @@
 import 'package:ecommerce/core/constants/appcolor.dart';
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CustomAppBarFavorite extends StatelessWidget {
   final String titleappbar;
-  final IconData? iconappbar;
-  final void Function()? onPressedFavorite;
-  const CustomAppBar({super.key, required this.titleappbar,  this.iconappbar,  this.onPressedFavorite});
+
+  const CustomAppBarFavorite({super.key, required this.titleappbar});
 
   @override
   Widget build(BuildContext context) {
@@ -37,22 +36,7 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           SizedBox(width: 15),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 4),
-            width: 60,
-            decoration: BoxDecoration(
-              color: AppColor.blueGray,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: IconButton(
-              onPressed: onPressedFavorite,
-              icon: Icon(
-                iconappbar,
-                size: 26,
-                color: AppColor.darkBlue,
-              ),
-            ),
-          ),
+          
         ],
       ),
     );
