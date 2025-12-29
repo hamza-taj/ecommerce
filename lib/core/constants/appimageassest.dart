@@ -4,20 +4,17 @@ class Appimageassest {
 
   //! Onboarding Images
   //? Onboarding Top Images
-
   static const String onBoardingTopOne    = "$rootImage/onboardingtopone.png";
   static const String onBoardingTopTwo    = "$rootImage/onboardingtoptwo.png";
   static const String onBoardingTopThree  = "$rootImage/onboardingtopthree.png";
 
   //? Onboarding Icon Images
-
   static const String onBoardingIconOne   = "$rootImage/onboardingiconone.png";
   static const String onBoardingIconTwo   = "$rootImage/onboardingicontwo.png";
   static const String onBoardingIconThree = "$rootImage/onboardingiconthree.png";
 
 
   //? Onboarding body Images
-
   static const String onboardingone   = "$rootImage/onbordingone.png";
   static const String onboardingtwo   = "$rootImage/onbordingtwo.png";
   static const String onboardingthree = "$rootImage/onbordingthree.png";
@@ -31,6 +28,13 @@ class Appimageassest {
   static const String verfiycode         = "$rootImage/verfiycode.png";
   static const String resetpassword      = "$rootImage/resetpassword.png";
   static const String successreset       = "$rootImage/success.png";
+
+  //? Setting Images
+  static const String profile            = "$rootImage/avatar.png";
+
+  //? Logo 
+  static const String logo               = "$rootImage/ecommercelogo.png";
+  static const String logotwo            = "$rootImage/ecommercelogtwo.jpeg";
 
   //! <---------------------------------------Lottie------------------------------------------------------->
 

@@ -10,6 +10,7 @@ ThemeData themeEnglish = ThemeData(
     bodyLarge: TextStyle(fontSize: 16),
   ),
 );
+
 //! Theme Arabic
 ThemeData themeArbic = ThemeData(
   fontFamily: 'Cairo',

@@ -4,25 +4,18 @@ import 'package:ecommerce/core/classes/crud.dart';
 class VerifyCodeSignupData { 
 
 Crud crud ;
-
 VerifyCodeSignupData(this.crud);
 
-
-//? Get All Data
-
+//! Get All Data
 postData( String email , String verfiycode ) async {
-
-var  response = await crud.postData ( APILinks.verifycodesignuplink , { 
-"email"        : email       ,
-"verifycode"   : verfiycode  ,
-} );
-
+var response = await crud.postData(APILinks.verifycodesignuplink ,{"email": email , "verifycode": verfiycode});
 return response.fold( (l) => l , (r) => r ) ;
-
-
-
-
 }
 
+//! Resend Code
+resendcodeData(String email) async {
+var response = await crud.postData(APILinks.resendCodeVerfiycodelink, {"email": email});
+return response.fold((l) => l, (r) => r);
+}
 }
 

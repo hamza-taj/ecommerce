@@ -50,7 +50,7 @@ class ItemsPage extends StatelessWidget {
                                 .data[index]['items_id']] =
                             controller.data[index]['favorite'];
                         return CustomCardListItems(
-                          active: false,
+                        
                           itemsmodel: ItemsModel.fromJson(
                             controller.data[index],
                           ),

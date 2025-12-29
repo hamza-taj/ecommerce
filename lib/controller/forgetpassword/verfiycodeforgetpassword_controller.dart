@@ -3,7 +3,6 @@ import 'package:ecommerce/core/constants/notification_card.dart';
 import 'package:ecommerce/core/constants/routesname.dart';
 import 'package:ecommerce/core/functions/handlingdata.dart';
 import 'package:ecommerce/data/datasources/remote/forgetpassword/verfiycode_data.dart';
-
 import 'package:get/get.dart';
 
 abstract class VerifyCodeForgetPasswordContorller extends GetxController {
@@ -16,27 +15,21 @@ class VerifyCodeForgetPasswordContorllerImp extends VerifyCodeForgetPasswordCont
 
 
   //! Backend and Data
-
   VerifyCodeData verifyCodeData = VerifyCodeData(Get.find());
   StatusRequest statusRequest = StatusRequest.none; 
   String? email;
 
   
-
+  //! Check Code
   @override
   checkcode(verifycode) async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await verifyCodeData.postData(
-      email!,
-      verifycode,
-    );
+    var response = await verifyCodeData.postData(email!,verifycode);
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-
          Get.offNamed( AppRoute.resetpassword , arguments: {"email": email} );
-
       } 
 
       else {
@@ -47,6 +40,7 @@ class VerifyCodeForgetPasswordContorllerImp extends VerifyCodeForgetPasswordCont
     update();
   }
 
+  //! Life Cycle
   @override
   void onInit() {
     email = Get.arguments["email"];

@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 class CustomNavigatorButton extends StatelessWidget {
   final IconData? iconbutton;
-  final String titlebutton;
+  // final String titlebutton;
   final void Function()? onPressed;
   final bool? active;
 
   const CustomNavigatorButton({
     super.key,
     required this.iconbutton,
-    required this.titlebutton,
+    // required this.titlebutton,
     required this.onPressed,
     required this.active,
   });
@@ -28,12 +28,12 @@ class CustomNavigatorButton extends StatelessWidget {
             color: active == true ? AppColor.primaryColor : Colors.black,
           ),
           SizedBox(height: 5),
-          Text(
-            titlebutton,
-            style: TextStyle(
-              color: active == true ? AppColor.primaryColor : Colors.black, fontWeight: FontWeight.bold , fontSize: 12
-            ),
-          ),
+          // Text(
+          //   titlebutton,
+          //   style: TextStyle(
+          //     color: active == true ? AppColor.primaryColor : Colors.black, fontWeight: FontWeight.bold , fontSize: 12
+          //   ),
+          // ),
         ],
       ),
     );

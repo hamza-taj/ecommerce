@@ -92,7 +92,29 @@ class TranslationsApp extends Translations {
       "66": "منتجات مقترحة لك",
       //? Items Details
       "67": "الألوان",
-      "68": "أضف إلى السلة",
+      "68": "أذهب إلى السلة",
+      //? Resend Code Verification
+      "69": "إعادة إرسال الرمز",
+      "70": "تم إرسال الرمز إلى بريدك الإلكتروني",
+      //? Favorite
+      "71": "تمت إضافة المنتج إلى المفضلة",
+      "72": "تمت إزالة المنتج من المفضلة",
+      //? Settings
+      "73": "تعطيل الإشعارات",
+      "74": "العنوان",
+      "75": "معلومات عنا",
+      "76": "اتصل بنا",
+      "77": "تسجيل الخروج",
+      //? MY Cart
+      "78": "تمت الإضافة إلى السلة بنجاح",
+      "79": "تمت الإزالة من السلة بنجاح",
+      "80": "مشترياتي",
+      "81": "لديك",
+      "82": "منتجات في سلة التسوق",
+      "83": "السعر",
+      "84": "الشحن",    
+      "85": "السعر الإجمالي",
+      "86": "إتمام الطلب",
 
     },
 
@@ -154,7 +176,7 @@ class TranslationsApp extends Translations {
       "43": "Please enter repeat password again",
       "44": "Confirm",
       //? Success Reset Password
-      "45": "Success!",
+      "45": "Success",
       "46": "congratulations! Your password has been successfully reset",
       //? Success Auth
       "47": "Congratulations! Your account has been successfully created",
@@ -184,7 +206,31 @@ class TranslationsApp extends Translations {
       "66": "Products For You",
       //? Items Details
       "67": "Colors",
-      "68": "Add to Cart",
+      "68": "Go to Cart",
+      //? Resend Code Verification
+      "69": "Resend Code",
+      "70": "The code has been sent to your email",
+      //? Favorite
+      "71": "Item added to favorite",
+      "72": "Item removed from favorite",
+      //? Settings
+      "73": "Disable Notifications",
+      "74": "Address",
+      "75": "About Us",
+      "76": "Contact Us",
+      "77": "Logout",
+      //? MY Cart
+      "78": "Added to cart successfully",
+      "79": "Removed from cart successfully",
+      "80": "My Cart",
+      "81": "You have",
+      "82": "Items in your cart",
+      "83": "Price",
+      "84": "Shipping",
+      "85": "Total Price",
+      "86": "Place Order",
+     
+
     },
   };
 }

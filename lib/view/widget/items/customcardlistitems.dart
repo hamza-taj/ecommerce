@@ -10,11 +10,11 @@ import 'package:get/get.dart';
 
 class CustomCardListItems extends GetView<ItemsControllerImp> {
   final ItemsModel itemsmodel;
-  final bool active;
+ 
   const CustomCardListItems({
     super.key,
     required this.itemsmodel,
-    required this.active,
+   
   });
 
   @override

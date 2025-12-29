@@ -14,6 +14,7 @@ class MyFavoriteController extends GetxController {
 
   //? View Favorite
   viewFavorite() async {
+    data.clear();
     statusRequest = StatusRequest.loading; //? Loading
     var response = await myfavoriteData.viewFavorite(
       myService.sharedPreferences.getString("id")!,
@@ -22,15 +23,19 @@ class MyFavoriteController extends GetxController {
     if (statusRequest == StatusRequest.success) {
       if (response['status'] == "success") {
         List responseData = response["data"];
-
         data.addAll(responseData.map((e) => MyfavoriteModel.fromJson(e)));
-
-        print("data");
-        print(data);
       } else {
         statusRequest = StatusRequest.failure;
       }
     }
+    update();
+  }
+
+  //? Delete Favorite
+  deleteFavorite(String favoriteid) {
+    var response = myfavoriteData.deleteFavorite(favoriteid);
+    statusRequest = handlingData(response);
+    data.removeWhere((element) => element.favoriteId == favoriteid); 
     update();
   }
 

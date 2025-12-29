@@ -1,13 +1,17 @@
 import 'package:ecommerce/view/screen/home.dart';
+import 'package:ecommerce/view/screen/setting/setting.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class HomeScreenController extends GetxController {
+
   changePage(int index);
+
 }
 
 class HomeScreenControllerImp extends HomeScreenController {
-  //? Move to Page
+
+  //! Move to Page
   int currentPage = 0;
   @override
   changePage(int index) {
@@ -15,13 +19,9 @@ class HomeScreenControllerImp extends HomeScreenController {
     update();
   }
 
-  //? List Widgets
+  //! List Widgets
   List<Widget> listpages = [
     Home(),
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Center(child: Text("Setting"))],
-    ),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [Center(child: Text("Notifications"))],
@@ -30,12 +30,15 @@ class HomeScreenControllerImp extends HomeScreenController {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [Center(child: Text("Profile"))],
     ),
+    Setting()
   ];
 
+  //! List Navigator
   List<Map<String , dynamic>> listnavigator = [
     { "name" : "Home"          , "icon":Icons.home_outlined},
-    { "name" : "Setting"       , "icon":Icons.settings_outlined},
     { "name" : "Alert"         , "icon":Icons.notifications_active_outlined},
     { "name" : "Profile"       , "icon":Icons.person_outline},
+    { "name" : "Setting"       , "icon":Icons.settings_outlined},
   ];
 }
+ 

@@ -24,7 +24,7 @@ class CustomBottomAppBarHome extends GetView<HomeScreenControllerImp> {
                     controller.changePage(i);
                   },
                   iconbutton: controller.listnavigator[i]["icon"],
-                  titlebutton: controller.listnavigator[i]["name"],
+                  // titlebutton: controller.listnavigator[i]["name"],
 
                   active: controller.currentPage == i ? true : false,
                 );

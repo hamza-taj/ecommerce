@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FavoriteController extends GetxController {
+
+  //! Favorite State
   Map isfavorite = {}; // Key : ItemsId  , Value : 1 or 0
 
   //! Back End Data
@@ -15,20 +17,17 @@ class FavoriteController extends GetxController {
   List data = [];
   MyServiceApp myService = Get.find();
 
-  //? Change Favorite State
-
+  //! Change Favorite State
   setfavorite(itemsId, favorite) {
     isfavorite[itemsId] = favorite;
     update();
   }
 
-  //? Add Favorite To DataBase
+  //! Add Favorite To DataBase
   addFavorite(String itemsid) async {
     statusRequest = StatusRequest.loading; //? Loading
     var response = await favoriteData.addFavorite(
-      myService.sharedPreferences.getString("id")!,
-      itemsid,
-    );
+      myService.sharedPreferences.getString("id")!,itemsid);
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.success) {
       if (response['status'] == "success") {
@@ -36,10 +35,10 @@ class FavoriteController extends GetxController {
           messageText: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
-              "Item added to favorite",
+              "71".tr,
               style: TextStyle(
                 color: AppColor.white,
-                fontSize: 16,
+                fontSize: myService.sharedPreferences.getString("lang") == "en" ? 15 : 13,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -50,15 +49,14 @@ class FavoriteController extends GetxController {
         statusRequest = StatusRequest.failure;
       }
     }
+    update();
   }
 
-  //? Remove Favorite From DataBase
+  //! Remove Favorite From DataBase
   removeFavorite(String itemsid) async {
     statusRequest = StatusRequest.loading; //? Loading
     var response = await favoriteData.removeFavorite(
-      myService.sharedPreferences.getString("id")!,
-      itemsid,
-    );
+      myService.sharedPreferences.getString("id")!,itemsid);
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.success) {
       if (response['status'] == "success") {
@@ -66,10 +64,10 @@ class FavoriteController extends GetxController {
           messageText: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
-              "Item removed from favorite",
+              "72".tr,
               style: TextStyle(
                 color: AppColor.white,
-                fontSize: 16,
+                fontSize: myService.sharedPreferences.getString("lang") == "en" ? 15 : 13,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -80,5 +78,6 @@ class FavoriteController extends GetxController {
         statusRequest = StatusRequest.failure;
       }
     }
+    update();
   }
 }

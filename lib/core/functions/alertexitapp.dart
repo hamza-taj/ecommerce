@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 Future<bool> alertExitApp() {
+  
   Get.defaultDialog(
     backgroundColor: Colors.white,
     titlePadding: EdgeInsets.symmetric(vertical: 15),
@@ -11,7 +12,6 @@ Future<bool> alertExitApp() {
     middleText: "55".tr,
     middleTextStyle: TextStyle(fontSize: 14),
     actions: [
-
       ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.red,
@@ -47,6 +47,6 @@ Future<bool> alertExitApp() {
       ),
     ],
   );
-  
+
   return Future.value(true);
 }

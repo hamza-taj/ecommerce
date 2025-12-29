@@ -7,42 +7,40 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 abstract class ResetPasswordContorller extends GetxController {
+
   resetpassword();
+
 }
 
 class ResetPasswordContorllerImp extends ResetPasswordContorller {
-  //? Controller TextFormField
 
+  //! Controller TextFormField
   late TextEditingController password = TextEditingController();
   late TextEditingController repassword = TextEditingController();
 
-  //? GlobalKey for Form
-
+  //! GlobalKey for Form
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
-  //? show password
-
+  //! show password
   bool isshowpassword = true;
   showpassword() {
     isshowpassword = isshowpassword == true ? false : true;
     update();
   }
 
-  // ! Backend and Data
+  //! Backend and Data
   String? email;
   StatusRequest statusRequest = StatusRequest.none; 
   ResetPasswordData resetPasswordData = ResetPasswordData(Get.find());
 
-
+  //! Reset Password
   @override
   resetpassword() async {
     if (password.text != repassword.text) {
-
       return showNotificationCard("57".tr, "62".tr);
     }
 
     if (formstate.currentState!.validate()) {
-    
       if (formstate.currentState!.validate()) {
         statusRequest = StatusRequest.loading;
         update();
@@ -62,7 +60,8 @@ class ResetPasswordContorllerImp extends ResetPasswordContorller {
       }
     } 
   }
-
+  
+  //! Life Cycle
   @override
   void onInit() {
     email = Get.arguments['email'];

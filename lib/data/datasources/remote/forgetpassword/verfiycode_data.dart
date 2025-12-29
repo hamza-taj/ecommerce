@@ -4,19 +4,16 @@ import 'package:ecommerce/core/classes/crud.dart';
 class VerifyCodeData {
 
 Crud crud ;
-
 VerifyCodeData(this.crud);
 
 
-//? Verify Code
-
+//! Verify Code
 postData( String email , String verfiycode ) async {
-
-var  response = await crud.postData ( APILinks.verifycodelink , { "email"   : email , "verifycode" : verfiycode } );
-
+var  response = await crud.postData ( APILinks.verifycodelink , {
+   "email"   : email ,
+   "verifycode" : verfiycode 
+ } );
 return response.fold( (l) => l , (r) => r ) ;
-
 }
-
 }
 

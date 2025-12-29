@@ -8,27 +8,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 abstract class ForgetPasswordController extends GetxController {
+
   checkEmail();
  
 }
 
 class ForgetPasswordControllerImp extends ForgetPasswordController {
-  // ? Controller TexFormField
+
+  //! Controller TexFormField
   late TextEditingController email = TextEditingController();
 
-  // ? GlobalKey for Form
+  //! GlobalKey for Form
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
- 
-
-  // ! Backend and Data
-
+  //! Backend and Data
   StatusRequest statusRequest = StatusRequest.none; 
   CheckEmailData checkEmailData = CheckEmailData(Get.find());
 
+
+  //! Check Email
   @override
   checkEmail() async {
-
     if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
       update();
@@ -36,9 +36,7 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-
           Get.offNamed(AppRoute.verifycodeforgetpassword , arguments: { "email": email.text});
-
         } 
         
         else {
@@ -50,6 +48,7 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
     }
   }
 
+  //! Life Cycle
   @override
   void onInit() {
     email = TextEditingController();

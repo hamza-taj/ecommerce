@@ -1,6 +1,8 @@
 class AppRoute {
   static const String onboarding = '/onboarding';
 
+  //? Language
+  static const String language                          = '/language';
   //? Auth
   static const String login                            = '/login';
   static const String signup                           = '/signup';
@@ -24,4 +26,7 @@ class AppRoute {
 
   //? My Favorite
   static const String myfavorite                       = '/myfavorite';
+
+  //? My Cart
+  static const String mycart                           = '/mycart';
 }

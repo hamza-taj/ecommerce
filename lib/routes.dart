@@ -1,5 +1,7 @@
 import 'package:ecommerce/core/constants/routesname.dart';
 import 'package:ecommerce/core/middleware/mymiddleware.dart';
+//import 'package:ecommerce/core/middleware/mymiddleware.dart';
+import 'package:ecommerce/view/screen/Cart/mycart.dart';
 import 'package:ecommerce/view/screen/forgetpasswordfile/forgetpassword.dart';
 import 'package:ecommerce/view/screen/forgetpasswordfile/resetpassword.dart';
 import 'package:ecommerce/view/screen/forgetpasswordfile/successresetpassword.dart';
@@ -17,20 +19,22 @@ import 'package:ecommerce/view/screen/onboardingpage/onboardingpage.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? getPages = [
-  //? Start App:
+
+  //! Start App
   GetPage(name: "/"                                  , page: () =>     Language(), 
   
-     middlewares: [MyMiddleWare()]
+    middlewares: [MyMiddleWare()]
   
   ),
 
- //? Test 
-  // GetPage(name: "/"                                  , page: () =>     ItemsDetails()),
+   //? Test 
+  //  GetPage(name: "/"                                  , page: () =>     MyCart()),
 
-  //? OnBoarding Page:
+  //! OnBoarding Page:
   GetPage(name: AppRoute.onboarding                  , page: () =>     OnBordingPage()),
-
-  //? Auth Pages:
+  //! Lanuge
+  GetPage(name: AppRoute.language                    , page: () =>     Language()),
+  //! Auth Pages:
   GetPage(name: AppRoute.login                       , page: () =>     Login()),
   GetPage(name: AppRoute.signup                      , page: () =>     SignUp()),
   GetPage(name: AppRoute.verfiycodsignup             , page: () =>     VerifyCodeSignUp()),
@@ -41,13 +45,19 @@ List<GetPage<dynamic>>? getPages = [
   GetPage(name: AppRoute.successresetpassword        , page: () =>     SuccessResetPassword(),
   ),
 
-  //? Home Page:
+  //! Home Page:
   GetPage(name: AppRoute.home                        , page: () =>     HomeScreen()),
 
-  //? Items
+  //! Items
   GetPage(name: AppRoute.items                       , page: () =>     ItemsPage()),
-  //? ItemsDetails
+
+  //! ItemsDetails
   GetPage(name: AppRoute.itemsdetails                , page: () =>     ItemsDetails()),
-  //? My Favorite
+
+  //! My Favorite
   GetPage(name: AppRoute.myfavorite                  , page: () =>     MyFavorite()),
+  
+  //! My Cart
+  GetPage(name: AppRoute.mycart                      , page: () =>     MyCart()),
+  
 ];
